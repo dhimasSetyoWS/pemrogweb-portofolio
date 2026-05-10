@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Coca-Cola Website - Fake Project</title>
+	<link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
+	<link rel="stylesheet" href="css/styles.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<style>
+		.project-container {
+			background-color: white;
+			max-width: 1200px;
+			margin: 0 auto;
+			box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+		}
+
+		.full-width-image {
+			width: 100%;
+			height: 500px;
+			object-fit: cover;
+		}
+
+		.breadcrumb {
+			padding: 20px;
+			background-color: #f8f9fa;
+			font-family: 'IBM Plex Mono', monospace;
+			font-size: 14px;
+		}
+
+		.breadcrumb a {
+			color: black;
+			text-decoration: none;
+		}
+
+		.breadcrumb a:hover {
+			text-decoration: underline;
+		}
+
+		.project-title {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			font-size: 50pt;
+			transform: translate(-50%, -50%);
+			color: white;
+			text-align: center;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+			background: rgba(0, 0, 0, 0.4);
+			padding: 10px 20px;
+			border-radius: 10px;
+			width: 80%;
+		}
+
+		.image-container {
+			position: relative;
+		}
+
+		.project-slider {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		.slider-container {
+			display: flex;
+			transition: transform 0.5s ease;
+			width: 300%;
+		}
+
+		.slider-slide {
+			width: 33.33%;
+			flex-shrink: 0;
+		}
+
+		.slider-slide img {
+			width: 100%;
+			height: 500px;
+			object-fit: cover;
+		}
+
+		.slider-controls {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			gap: 10px;
+		}
+
+		.slider-dot {
+			width: 10px;
+			height: 10px;
+			background-color: rgba(255, 255, 255, 0.5);
+			border-radius: 50%;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		.slider-dot.active {
+			background-color: white;
+		}
+
+		.slider-toggle {
+			display: none;
+		}
+
+		#slide1:checked~.slider-container {
+			transform: translateX(0);
+		}
+
+		#slide2:checked~.slider-container {
+			transform: translateX(-33.33%);
+		}
+
+		#slide3:checked~.slider-container {
+			transform: translateX(-66.66%);
+		}
+	</style>
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<li><a href="../index.html#contact">contact</a></li>
+			<li>works</li>
+			<li>expertience</li>
+			<li class="empty"></li>
+			<li><a href="profil.html">profil</a></li>
+			<li><a href="">twitter</a></li>
+			<li><a href="https://www.linkedin.com/in/dhimas-setyo-wahyu-santoso-b42b15283/" target="_blank">linkedin</a></li>
+		</ul>
+	</nav>
+
+	<div class="project-container">
+		<div class="image-container">
+			<img src="img/project/Coca-Cola.png" class="full-width-image" alt="Coca-Cola Fake Website">
+			<h1 class="project-title">Website Coca-Cola<br>Fake Project</h1>
+		</div>
+		<div class="breadcrumb">
+			<a href="../index.html">Home</a> / Website Coca-Cola (Fake Project)
+		</div>
+
+		<!-- Project Overview -->
+		<section class="project" style="padding-top: 50px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+						<h2>Project Overview</h2>
+						<p><strong>Website Coca-Cola</strong> adalah proyek latihan (fake project) yang bertujuan untuk
+							mengasah kemampuan dalam membangun <strong>antarmuka web yang responsif dan
+								interaktif</strong>. Saya mengembangkan website ini menggunakan <strong>HTML, CSS, dan
+								Bootstrap</strong> tanpa framework frontend modern, fokus pada desain yang menyerupai
+							tampilan brand Coca-Cola yang ceria, merah, dan dinamis.</p>
+						<p>Proyek ini tidak terhubung ke backend atau database, namun menjadi portofolio penting yang
+							menunjukkan kemampuan saya dalam layouting, grid system, komponen Bootstrap, dan efek
+							interaktif sederhana (hover, carousel, modal).</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Research & Discovery (dummy) -->
+		<section class="project blue">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+						<h2>Research & Design Reference</h2>
+						<p>Meskipun bersifat latihan, saya tetap melakukan riset visual:</p>
+						<ul>
+							<li>Mempelajari website resmi Coca-Cola (coca-cola.com) untuk menangkap palet warna,
+								tipografi, dan gaya hero section.</li>
+							<li>Mengumpulkan inspirasi dari situs brand minuman lainnya seperti Pepsi, Fanta, dan
+								Sprite.</li>
+							<li>Menentukan struktur halaman yang umum: navbar, hero, produk, tentang, footer.</li>
+							<li>Memastikan desain responsive dengan pendekatan mobile-first menggunakan Bootstrap 5.
+							</li>
+						</ul>
+						<p>Keputusan desain utama: menggunakan warna merah khas (#F40009), putih, dan hitam, dengan
+							aksen curve yang merepresentasikan bentuk botol Coca-Cola.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Development & Tech Stack -->
+		<section class="project">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+						<h2>Development & Implementation</h2>
+						<p>Proyek ini dibangun dengan stack sederhana namun efektif:</p>
+						<ul>
+							<li><strong>HTML5</strong> untuk struktur semantik.</li>
+							<li><strong>CSS3</strong> kustom untuk styling tambahan (animasi hover, efek bayangan, font
+								styling).</li>
+							<li><strong>Bootstrap 5</strong> (grid system, navbar collapse, carousel, cards, modal).
+							</li>
+							<li><strong>Fitur interaktif:</strong> Carousel produk, tombol "Learn More" dengan modal,
+								smooth scroll, dan form kontak sederhana.</li>
+							<li><strong>Responsif:</strong> Diuji pada berbagai ukuran layar (mobile, tablet, desktop).
+							</li>
+						</ul>
+						<p>Kode dikelola di GitHub dan di-deploy menggunakan GitHub Pages sehingga dapat diakses publik.
+							<br>
+							<strong>Link live demo:</strong> <a href="https://dhimassetyows.github.io/cocaCola-page/"
+								target="_blank">https://dhimassetyows.github.io/cocaCola-page/</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Key Outcomes & Learnings -->
+		<section class="project blue">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+						<h2>Key Outcomes & Learnings</h2>
+						<p>Melalui proyek latihan ini, saya mendapatkan:</p>
+						<ul>
+							<li>Pemahaman lebih dalam tentang <strong>Bootstrap grid</strong> dan utility classes untuk
+								mempercepat development.</li>
+							<li>Pengalaman menciptakan <strong>desain responsif</strong> yang tetap rapi di segala
+								perangkat.</li>
+							<li>Kemampuan mengintegrasikan <strong>komponen interaktif</strong> (carousel, modal,
+								tooltip) tanpa JavaScript murni.</li>
+							<li>Portofolio visual yang dapat ditunjukkan ke calon klien atau rekruter.</li>
+							<li>Feedback positif dari teman-teman desainer bahwa tampilan terasa "seperti website
+								Coca-Cola sungguhan".</li>
+						</ul>
+						<p>Proyek ini menjadi fondasi untuk proyek-proyek frontend saya selanjutnya yang lebih kompleks
+							(misal: dengan Vue.js atau React).</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Project Gallery (slider) -->
+		<section class="project">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+						<h2>Project Gallery</h2>
+						<div class="project-slider">
+							<div class="slider-container">
+								<div class="slider-slide">
+									<img src="img/project/Coca-Cola.png" alt="Hero Section">
+								</div>
+							</div>
+						</div>
+						<figcaption style="text-align: center; margin-top: 10px;">Tampilan halaman Coca-Cola (fake
+							project)</figcaption>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<footer id="contact">
+		<h2>any questions?<br>
+			find me here <br><a href="mailto:dhimas.palu@gmail.com">dhimas.palu@gmail.com</a></h2>
+		<p>designed & developed by Dhimas 2026</p>
+	</footer>
+</body>
+
+</html>

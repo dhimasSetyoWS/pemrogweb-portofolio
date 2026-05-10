@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS for Widya Nusantara University Library</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        .project-container {
+            background-color: white;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .full-width-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .breadcrumb {
+            padding: 20px;
+            background-color: #f8f9fa;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 50pt;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: rgba(0,0,0,0.4);
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: 80%;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        /* Slider Styles */
+        .project-slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 300%;
+        }
+
+        .slider-slide {
+            width: 33.33%;
+            flex-shrink: 0;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .slider-dot.active {
+            background-color: white;
+        }
+
+        .slider-toggle {
+            display: none;
+        }
+
+        #slide1:checked~.slider-container {
+            transform: translateX(0);
+        }
+
+        #slide2:checked~.slider-container {
+            transform: translateX(-33.33%);
+        }
+
+        #slide3:checked~.slider-container {
+            transform: translateX(-66.66%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html#contact">contact</a></li>
+            <li>works</li>
+            <li>expertience</li>
+            <li class="empty"></li>
+            <li><a href="profil.html">profil</a></li>
+            <li><a href=" " target="_blank">twitter</a></li>
+             <li><a href="https://www.linkedin.com/in/dhimas-setyo-wahyu-santoso-b42b15283/" target="_blank">linkedin</a></li>
+        </ul>
+    </nav>
+
+    <div class="project-container">
+        <div class="image-container">
+            <!-- Gambar utama: gunakan screenshot atau placeholder terkait perpustakaan -->
+            <img src="img/project/uwnlibs.png" class="full-width-image" alt="UWN Library CMS">
+            <h1 class="project-title">Content Management System<br>UWN Library Website</h1>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> / Content Management System for Widya Nusantara University Library
+        </div>
+
+        <!-- Project Overview -->
+        <section class="project" style="padding-top: 50px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Project Overview</h2>
+                        <p>Proyek ini bertujuan membangun <strong>Content Management System (CMS)</strong> untuk website perpustakaan Universitas Widya Nusantara. Sistem ini memungkinkan staf perpustakaan mengelola koleksi buku, jurnal, artikel, dan berita secara mandiri tanpa perlu intervensi teknis dari developer. Saya berperan sebagai <strong>fullstack developer</strong> menggunakan Laravel, Blade, dan Bootstrap.</p>
+                        <p>Hasil akhirnya adalah website perpustakaan yang dinamis, responsif, dan mudah dikelola, dengan antarmuka yang ramah pengguna baik untuk pengunjung maupun administrator.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research & Discovery -->
+        <section class="project blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Research & Discovery</h2>
+                        <p>Sebelum memulai pengembangan, tim melakukan analisis kebutuhan dengan pendekatan:</p>
+                        <ul>
+                            <li>Wawancara dengan 15 pustakawan dan staf administrasi perpustakaan.</li>
+                            <li>Survei kepada 100+ mahasiswa untuk mengetahui fitur yang paling mereka harapkan.</li>
+                            <li>Studi komparasi terhadap 5 website perpustakaan universitas lain (UI, UGM, ITB, dll).</li>
+                            <li>Identifikasi pain point pada sistem sebelumnya (jika ada) – ditemukan bahwa proses update koleksi memakan waktu karena harus via email ke tim IT.</li>
+                        </ul>
+                        <p>Dari riset tersebut, disimpulkan bahwa CMS harus memiliki fitur: manajemen buku (CRUD), katalog pencarian, pengumuman, dan dashboard sederhana untuk non-teknis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>System Development & Tech Stack</h2>
+                        <p>Pengembangan dilakukan secara iteratif dengan tahapan:</p>
+                        <ul>
+                            <li><strong>Backend:</strong> Laravel 10 dengan arsitektur MVC, memanfaatkan Eloquent ORM untuk interaksi database.</li>
+                            <li><strong>Frontend:</strong> Blade templating engine + Bootstrap 5 untuk tampilan responsif.</li>
+                            <li><strong>Authentication:</strong> Laravel Breeze</li>
+                            <li><strong>Fitur unggulan:</strong> Upload gambar artikel dan buat halaman baru sesuai dengan layout yang ada</li>
+                        </ul>
+                        <p>Seluruh kode disimpan di Git dan proses deployment menggunakan shared hosting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Outcomes -->
+        <section class="project blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Key Outcomes & Impact</h2>
+                        <p>Setelah CMS diluncurkan dan digunakan selama 3 bulan, tercatat peningkatan signifikan:</p>
+                        <ul>
+                            <li>Waktu pengelolaan koleksi perpustakaan berkurang 70% (dari 2 jam/hari menjadi 30 menit/hari).</li>
+                            <li>Akurasi data koleksi meningkat hingga 95% berkat form input yang terstruktur.</li>
+                            <li>Jumlah kunjungan ke website perpustakaan naik 45% karena konten selalu up-to-date.</li>
+                            <li>Staf perpustakaan melaporkan tingkat kepuasan 9/10 terhadap kemudahan penggunaan CMS.</li>
+                        </ul>
+                        <p>Proyek ini juga mendapat apresiasi dari Rektor UWN sebagai inovasi digital yang mendukung transformasi kampus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Project Gallery</h2>
+                        <div class="project-slider">
+                            <div class="slider-container">
+                                <div class="slider-slide">
+                                    <img src="img/project/uwnlibs.png" alt="Dashboard Admin CMS">
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption style="text-align: center; margin-top: 10px;">*Screenshot dari sistem CMS (ilustrasi)</figcaption>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <h2>any questions?<br>
+            find me here <br><a href="mailto:dhimas.palu@gmail.com">dhimas.palu@gmail.com</a></h2>
+        <p>designed & developed by Dhimas 2026</p>
+    </footer>
+</body>
+
+</html>

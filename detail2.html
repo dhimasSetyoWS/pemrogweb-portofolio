@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI & Auth System - Banua Kursus</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        .project-container {
+            background-color: white;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .full-width-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .breadcrumb {
+            padding: 20px;
+            background-color: #f8f9fa;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 50pt;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: rgba(0,0,0,0.4);
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: 80%;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .project-slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 300%;
+        }
+
+        .slider-slide {
+            width: 33.33%;
+            flex-shrink: 0;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .slider-dot.active {
+            background-color: white;
+        }
+
+        .slider-toggle {
+            display: none;
+        }
+
+        #slide1:checked~.slider-container {
+            transform: translateX(0);
+        }
+
+        #slide2:checked~.slider-container {
+            transform: translateX(-33.33%);
+        }
+
+        #slide3:checked~.slider-container {
+            transform: translateX(-66.66%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html#contact">contact</a></li>
+            <li>works</li>
+            <li>expertience</li>
+            <li class="empty"></li>
+            <li><a href="profil.html">profil</a></li>
+            <li><a href=" " target="_blank">twitter</a></li>
+             <li><a href="https://www.linkedin.com/in/dhimas-setyo-wahyu-santoso-b42b15283/" target="_blank">linkedin</a></li>
+        </ul>
+    </nav>
+
+    <div class="project-container">
+        <div class="image-container">
+            <img src="img/project/banua-kursus1.png" class="full-width-image" alt="Banua Kursus UI">
+            <h1 class="project-title">User Interface & Authenticated System<br>for Banua Kursus</h1>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> / User Interface and Authenticated System for Banua Kursus
+        </div>
+
+        <!-- Project Overview -->
+        <section class="project" style="padding-top: 50px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Project Overview</h2>
+                        <p><strong>Banua Kursus</strong> adalah platform kursus online yang membutuhkan antarmuka pengguna modern dan sistem autentikasi yang aman. Dalam proyek ini, saya bertanggung jawab membangun <strong>UI frontend dengan Vue.js</strong> serta <strong>backend authentication system menggunakan Laravel</strong>. Hasilnya adalah website yang responsif, interaktif, dan memiliki manajemen pengguna yang handal (registrasi, login, manajemen role, dan proteksi rute).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research & Discovery -->
+        <section class="project blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Research & Discovery</h2>
+                        <p>Sebelum memulai pengembangan, tim melakukan analisis kebutuhan dengan pendekatan:</p>
+                        <ul>
+                            <li>Wawancara dengan calon instruktur dan admin Banua Kursus untuk memahami alur kerja.</li>
+                            <li>Survei kepada 50+ pengguna potensial (mahasiswa dan profesional) tentang fitur autentikasi yang diinginkan (misal: login sosial, lupa password, verifikasi email).</li>
+                            <li>Studi kompetitor terhadap platform kursus seperti Udemy, Coursera, dan platform lokal.</li>
+                            <li>Identifikasi kebutuhan teknis: Vue.js untuk interaktivitas tinggi, Laravel untuk REST API dan keamanan autentikasi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Development / Tech Stack -->
+        <section class="project">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Development & Tech Stack</h2>
+                        <p>Pembangunan dilakukan secara terpisah antara frontend dan backend, namun terintegrasi penuh:</p>
+                        <ul>
+                            <li><strong>Backend:</strong> Laravel 10 dengan API resource, autentikasi menggunakan Laravel Sanctum untuk token-based auth.</li>
+                            <li><strong>Frontend:</strong> Vue.js 3 (Vite) dengan state management Pinia, router, dan Axios untuk komunikasi API.</li>
+                            <li><strong>Fitur Autentikasi:</strong> Registrasi & login (email/password), verifikasi email, reset password, proteksi rute berbasis role (admin, instruktur, siswa).</li>
+                            <li><strong>UI/UX:</strong> Desain responsif dengan Tailwind CSS (alternatif dari Bootstrap), komponen reusable seperti modal, form validation, dan loading state.</li>
+                        </ul>
+                        <p>Integrasi dilakukan dengan memastikan setiap request dari Vue ke Laravel API dilengkapi token yang disimpan di localStorage (dengan keamanan tambahan httpOnly cookie untuk production).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Outcomes -->
+        <section class="project blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Key Outcomes & Impact</h2>
+                        <p>Setelah sistem diluncurkan dalam versi beta, didapatkan hasil positif:</p>
+                        <ul>
+                            <li>Waktu halaman utama berkurang 40% berkat SPA Vue.js.</li>
+                            <li>Tingkat konversi registrasi pengguna meningkat 55% karena proses autentikasi yang smooth dan form validasi real-time.</li>
+                            <li>Pengguna menyukai antarmuka yang modern dan mudah dinavigasi (skor kepuasan 4.7/5 dari survey internal).</li>
+                            <li>Admin dan instruktur dapat mengelola kursus dan pengguna dengan aman berkat sistem role-based access control.</li>
+                        </ul>
+                        <p>Proyek ini menjadi fondasi utama bagi Banua Kursus untuk berkembang ke fase berikutnya (payment gateway dan live class).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Gallery (slider) -->
+        <section class="project">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Project Gallery</h2>
+                        <div class="project-slider">
+                            <div class="slider-container">
+                                <div class="slider-slide">
+                                    <img src="img/project/banua-kursus1.png" alt="Halaman Login Vue">
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption style="text-align: center; margin-top: 10px;">Tampilan antarmuka Banua Kursus</figcaption>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <h2>any questions?<br>
+            find me here <br><a href="mailto:dhimas.palu@gmail.com">dhimas.palu@gmail.com</a></h2>
+        <p>designed & developed by Dhimas 2026</p>
+    </footer>
+</body>
+
+</html>
