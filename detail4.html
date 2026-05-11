@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hijab Web - Astro + Tailwind CSS</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Gaya identik dengan halaman detail sebelumnya */
+        .project-container {
+            background-color: white;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .full-width-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .breadcrumb {
+            padding: 20px;
+            background-color: #f8f9fa;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 50pt;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: rgba(0,0,0,0.4);
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: 80%;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .project-slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 300%;
+        }
+
+        .slider-slide {
+            width: 33.33%;
+            flex-shrink: 0;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .slider-dot.active {
+            background-color: white;
+        }
+
+        .slider-toggle {
+            display: none;
+        }
+
+        #slide1:checked~.slider-container {
+            transform: translateX(0);
+        }
+
+        #slide2:checked~.slider-container {
+            transform: translateX(-33.33%);
+        }
+
+        #slide3:checked~.slider-container {
+            transform: translateX(-66.66%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html#contact">contact</a></li>
+            <li>works</li>
+            <li>expertience</li>
+            <li class="empty"></li>
+            <li><a href="profil.html">profil</a></li>
+            <li><a href="https://x.com/anzanul" target="_blank">twitter</a></li>
+            <li>linkedin</li>
+        </ul>
+    </nav>
+
+    <div class="project-container">
+        <div class="image-container">
+            <img src="img/project/Hijab-web.png" class="full-width-image" alt="Hijab Web - Astro Project">
+            <h1 class="project-title">Hijab Web<br>Astro + Tailwind CSS</h1>
+        </div>
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> / Hijab Web (Fake Project with Astro)
+        </div>
+
+        <!-- Project Overview -->
+        <section class="project" style="padding-top: 50px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Project Overview</h2>
+                        <p><strong>Hijab Web</strong> adalah proyek latihan (fake project) untuk mengasah kemampuan dalam membangun website statis modern menggunakan <strong>Astro</strong> dan <strong>Tailwind CSS</strong>. Astro dipilih karena terkenal cepat dan ringan di browser berkat arsitektur island components dan zero JavaScript by default. Website ini menampilkan galeri hijab modern, koleksi terbaru, dan informasi brand dengan tampilan yang elegan dan responsif.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research & Technology Consideration -->
+        <section class="project blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Why Astro? Research & Consideration</h2>
+                        <p>Sebelum memilih framework, saya membandingkan beberapa opsi untuk website statis e-commerce hijab:</p>
+                        <ul>
+                            <li><strong>Astro</strong> → Kecepatan luar biasa (hampir 100% HTML murni), kemampuan partial hydration, kompatibel dengan berbagai UI framework.</li>
+                            <li><strong>Next.js (SSG)</strong> → Lebih berat, cocok untuk aplikasi kompleks, namun overkill untuk kebutuhan statis branding hijab.</li>
+                            <li><strong>Hugo</strong> → Cepat tapi kurang fleksibel untuk komponen Tailwind.</li>
+                        </ul>
+                        <p>Kesimpulan: Astro memberikan keseimbangan terbaik antara kecepatan (Lighthouse skor 100 untuk Performance) dan developer experience. Banyak forum yang merekomendasikan Astro untuk blog, portofolio, dan landing page.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development & Implementation -->
+        <section class="project">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Development & Tech Stack</h2>
+                        <p>Proyek ini dibangun dengan komponen-komponen utama:</p>
+                        <ul>
+                            <li><strong>Astro 4.x</strong> → Framework utama, menggunakan `.astro` komponen.</li>
+                            <li><strong>Tailwind CSS 3</strong> → Styling utility-first untuk desain responsif dan konsisten.</li>
+                            <li><strong>Content Collections</strong> → Mengelola galeri produk hijab (images, harga, deskripsi) dalam format markdown/YAML.</li>
+                            <li><strong>Astro Image Optimization</strong> → Komponen `<Image />` untuk optimasi gambar otomatis (srcset, lazy loading).</li>
+                            <li><strong>Deployment</strong> → Vercel (dengan output static) sehingga loading sangat cepat dan SEO-friendly.</li>
+                        </ul>
+                        <p>Hasil akhir: website statis dengan total bundle size kurang dari 100KB (CSS + HTML) dan tanpa JavaScript rintisan, namun tetap interaktif untuk menu mobile.</p>
+                        <p><strong>Live demo:</strong> <a href="https://hijab-web.vercel.app" target="_blank">https://hijab-web.vercel.app</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Outcomes & Learnings -->
+        <section class="project blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Key Outcomes & Learnings</h2>
+                        <p>Melalui proyek ini, saya berhasil:</p>
+                        <ul>
+                            <li>Memahami arsitektur Astro (routing, layout, komponen, dan partial hydration).</li>
+                            <li>Mengintegrasikan Tailwind CSS dengan Astro tanpa konflik.</li>
+                            <li>Mengoptimalkan performa website: waktu muat rata-rata 0.3 detik (First Contentful Paint).</li>
+                            <li>Membangun website yang ringan dan sangat cepat di perangkat mobile sekalipun.</li>
+                            <li>Menerapkan prinsip <strong>Islands Architecture</strong> – komponen interaktif hanya di-load jika dibutuhkan.</li>
+                        </ul>
+                        <p>Proyek ini menjadi bukti bahwa website statis modern bisa semodern SPA tapi dengan performa lebih baik. Pengalaman ini berguna untuk proyek-proyek client yang membutuhkan landing page cepat, blog, atau katalog produk.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Gallery (slider) -->
+        <section class="project">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h2>Project Gallery</h2>
+                        <div class="project-slider">
+                            <input type="radio" name="slider" id="slide1" class="slider-toggle" checked>
+                            <input type="radio" name="slider" id="slide2" class="slider-toggle">
+                            <input type="radio" name="slider" id="slide3" class="slider-toggle">
+
+                            <div class="slider-container">
+                                <div class="slider-slide">
+                                    <img src="img/project/Hijab-web.png" alt="Homepage Hijab Web">
+                                </div>
+                                <div class="slider-slide">
+                                    <img src="img/project/hijab-web2.png" alt="Galery Produk">
+                                </div>
+                                <div class="slider-slide">
+                                    <img src="img/project/hijab-web3.png" alt="Mobile View">
+                                </div>
+                            </div>
+
+                            <div class="slider-controls">
+                                <label for="slide1" class="slider-dot"></label>
+                                <label for="slide2" class="slider-dot"></label>
+                                <label for="slide3" class="slider-dot"></label>
+                            </div>
+                        </div>
+                        <figcaption style="text-align: center; margin-top: 10px;">Tampilan website Hijab Web (Astro + Tailwind)</figcaption>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <h2>any questions?<br>
+            find me here <br><a href="mailto:dhimas.palu@gmail.com">dhimas.palu@gmail.com</a></h2>
+        <p>designed & developed by Dhimas 2026</p>
+    </footer>
+</body>
+
+</html>
